@@ -10,4 +10,7 @@
     <string name="success">Success</string>
     <string name="error">Error</string>
     <string name="Loading">Loading</string>
+    <string name="search_movies">Search Movies</string>
+    <string name="please_retry">Please Retry</string>
+    <string name="no_data_found">No Data Found!</string>
 </resources>

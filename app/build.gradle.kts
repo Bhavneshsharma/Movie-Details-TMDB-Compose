@@ -19,6 +19,7 @@ android {
         versionName = "1.0"
 
         buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+        buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500\"")
         buildConfigField("String", "API_KEY", "\"d078fd4e7b6372f8f7ef1b3d59280009\"")
         buildConfigField(
             "String",
@@ -93,6 +94,10 @@ dependencies {
     //Dagger-Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    //Glide
+    implementation(libs.glide.compose)
+
 }
 
 kapt {

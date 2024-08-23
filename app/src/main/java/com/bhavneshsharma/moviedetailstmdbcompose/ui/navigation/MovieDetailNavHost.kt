@@ -15,7 +15,7 @@ fun MovieDetailNavHost(
     NavHost(navController = navHostController, startDestination = ScreenMovieList) {
         composable<ScreenMovieList> {
             val viewModel: MovieListViewModel = hiltViewModel()
-            MovieListScreen()
+            MovieListScreen(viewModel = viewModel, onItemClick = {})
         }
     }
 }
