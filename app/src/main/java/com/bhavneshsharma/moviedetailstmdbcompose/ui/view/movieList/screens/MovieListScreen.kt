@@ -54,6 +54,7 @@ import androidx.compose.ui.unit.sp
 import com.bhavneshsharma.moviedetailstmdbcompose.BuildConfig
 import com.bhavneshsharma.moviedetailstmdbcompose.R
 import com.bhavneshsharma.moviedetailstmdbcompose.data.model.Movie
+import com.bhavneshsharma.moviedetailstmdbcompose.ui.navigation.ScreenMovieDetail
 import com.bhavneshsharma.moviedetailstmdbcompose.ui.view.movieList.viewModel.MovieListViewModel
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
@@ -63,7 +64,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MovieListScreen(
     viewModel: MovieListViewModel,
-    onItemClick: () -> Unit
+    onItemClick: (ScreenMovieDetail) -> Unit
 ) {
     val searchItem by viewModel.searchItem.collectAsState()
     val movieListDataState by viewModel.movieListActionData.collectAsState()
@@ -132,8 +133,13 @@ fun MovieListScreen(
                     ) {
                         items(movieListDataState.data.size) { index ->
                             val currentItem = movieListDataState.data[index]
+                            val screenMovieDetail = ScreenMovieDetail(
+                                movieTitle = currentItem.title,
+                                movieDescription = currentItem.overview,
+                                moviePoster = BuildConfig.IMAGE_BASE_URL + currentItem.posterPath
+                            )
                             ListItem(
-                                modifier = Modifier.clickable { onItemClick() },
+                                modifier = Modifier.clickable { onItemClick(screenMovieDetail) },
                                 headlineContent = { MovieListItem(currentItem) })
                         }
                     }
