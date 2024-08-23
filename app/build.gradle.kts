@@ -18,6 +18,14 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+        buildConfigField("String", "API_KEY", "\"d078fd4e7b6372f8f7ef1b3d59280009\"")
+        buildConfigField(
+            "String",
+            "READ_ACCESS_TOKEN",
+            "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMDc4ZmQ0ZTdiNjM3MmY4ZjdlZjFiM2Q1OTI4MDAwOSIsIm5iZiI6MTcyNDM0NDQwMi45MjcwNTUsInN1YiI6IjY2Yzc2NmZmZjkxODdlZjY4NmIyZTZiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jADV3VwPaXsiKDDIpLSqFj0QD2lde8fLertPo30LUqk\""
+        )
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
